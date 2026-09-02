@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zamówienie | Kaya Flowers</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="checkout-v19.css">
+  <script src="checkout-v19.js" defer></script>
+</head>
+<body>
+  <header class="checkout-top">
+    <a class="brand" href="index.html">
+      <span>Kaya</span>
+      <b>FLOWERS</b>
+    </a>
+    <a class="back-shop" href="index.html#oferta">← WRÓĆ DO SKLEPU</a>
+  </header>
+
+  <main class="checkout-shell">
+    <section class="checkout-main">
+      <div class="eyebrow">KAYA FLOWERS</div>
+      <h1>Finalizacja zamówienia</h1>
+
+      <div class="progress">
+        <button type="button" class="active" data-progress="1"><span>1</span>Dostawa</button>
+        <i></i>
+        <button type="button" data-progress="2"><span>2</span>Dane</button>
+        <i></i>
+        <button type="button" data-progress="3"><span>3</span>Płatność</button>
+      </div>
+
+      <div id="emptyCheckout" class="empty-checkout hidden">
+        <h2>Twój koszyk jest pusty</h2>
+        <p>Dodaj bukiet do koszyka, aby przejść do zamówienia.</p>
+        <a href="index.html#oferta">PRZEJDŹ DO OFERTY →</a>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <section class="step active" data-step="1">
+          <h2>Dostawa lub odbiór</h2>
+          <p class="lead">Wybierz sposób realizacji zamówienia oraz dogodny termin.</p>
+
+          <div class="delivery-grid">
+            <label class="delivery-card active">
+              <input type="radio" name="delivery" value="Kurier Kaya Flowers" checked>
+              <div>
+                <b>Dostawa kurierem Kaya Flowers</b>
+                <span>Świeże kwiaty dostarczone bezpośrednio pod wskazany adres.</span>
+              </div>
+            </label>
+
+            <label class="delivery-card">
+              <input type="radio" name="delivery" value="Odbiór osobisty">
+              <div>
+                <b>Odbiór osobisty</b>
+                <span>Mleczarska 9E, 05-500 Piaseczno</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="grid2">
+            <label>Data dostawy / odbioru
+              <input id="deliveryDate" type="date">
+            </label>
+            <label>Preferowana godzina
+              <select id="deliveryTime">
+                <option value="">Wybierz przedział</option>
+                <option>10:00–12:00</option>
+                <option>12:00–14:00</option>
+                <option>14:00–16:00</option>
+                <option>16:00–18:00</option>
+              </select>
+            </label>
+          </div>
+
+          <label id="addressWrap">Adres dostawy
+            <input id="deliveryAddress" placeholder="Ulica, numer, kod pocztowy, miejscowość">
+          </label>
+
+          <div class="actions right">
+            <button type="button" class="primary" data-next="2">DALEJ →</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="2">
+          <h2>Dane zamawiającego</h2>
+          <p class="lead">Podaj dane potrzebne do potwierdzenia i realizacji zamówienia.</p>
+
+          <div class="grid2">
+            <label>Imię i nazwisko
+              <input id="customerName" autocomplete="name">
+            </label>
+            <label>Telefon
+              <input id="customerPhone" autocomplete="tel">
+            </label>
+          </div>
+
+          <label>E-mail
+            <input id="customerEmail" type="email" autocomplete="email" placeholder="Na ten adres wyślemy potwierdzenie">
+          </label>
+
+          <label class="gift">
+            <input id="isGift" type="checkbox">
+            <span>To jest prezent dla innej osoby</span>
+          </label>
+
+          <div id="recipientFields" class="grid2 hidden">
+            <label>Imię odbiorcy
+              <input id="recipientName">
+            </label>
+            <label>Telefon odbiorcy
+              <input id="recipientPhone">
+            </label>
+          </div>
+
+          <label>Życzenia / uwagi do zamówienia
+            <textarea id="orderNote" rows="5" placeholder="Np. tekst na bileciku, preferowana kolorystyka, dodatkowe informacje..."></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="button" class="secondary" data-back="1">← WSTECZ</button>
+            <button type="button" class="primary" data-next="3">DALEJ →</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="3">
+          <h2>Płatność i podsumowanie</h2>
+          <p class="lead">Sprawdź dane zamówienia przed wysłaniem.</p>
+
+          <div id="finalSummary" class="final-summary"></div>
+
+          <div class="payment-box">
+            <span>PŁATNOŚĆ ONLINE</span>
+            <div class="payment-methods">
+              <label class="payment active"><input type="radio" name="payment" value="BLIK" checked><b>BLIK</b></label>
+              <label class="payment"><input type="radio" name="payment" value="Karta"><b>KARTA</b></label>
+              <label class="payment"><input type="radio" name="payment" value="Przelew online"><b>PRZELEW ONLINE</b></label>
+            </div>
+            <small>Wersja demonstracyjna — operator płatności zostanie podłączony w wersji produkcyjnej.</small>
+          </div>
+
+          <label class="terms">
+            <input id="terms" type="checkbox">
+            <span>Akceptuję warunki zamówienia i potwierdzam poprawność danych.</span>
+          </label>
+
+          <div class="actions">
+            <button type="button" class="secondary" data-back="2">← WSTECZ</button>
+            <button type="submit" class="primary">ZAMAWIAM I PŁACĘ →</button>
+          </div>
+        </section>
+      </form>
+    </section>
+
+    <aside class="summary-side">
+      <div class="summary-card">
+        <span class="mini">TWOJE ZAMÓWIENIE</span>
+        <h2>Podsumowanie</h2>
+        <div id="sideItems"></div>
+        <div class="side-total">
+          <span>Razem</span>
+          <strong id="sideTotal">0 zł</strong>
+        </div>
+        <div class="secure-note">
+          <b>Bezpieczne zamówienie</b>
+          <span>Dane klienta i płatność będą zabezpieczone w wersji produkcyjnej.</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <div id="success" class="success-modal">
+    <div>
+      <span>KAYA FLOWERS</span>
+      <h2>Dziękujemy za zamówienie 🌷</h2>
+      <p>W wersji produkcyjnej potwierdzenie zostanie wysłane automatycznie na podany adres e-mail, a szczegóły zamówienia trafią do Kaya Flowers.</p>
+      <a href="index.html">WRÓĆ NA STRONĘ GŁÓWNĄ →</a>
+    </div>
+  </div>
+<!-- KAYA CHECKOUT BUILD: v20 -->
+</body>
+</html>

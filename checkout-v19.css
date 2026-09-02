@@ -1,0 +1,43 @@
+
+*{box-sizing:border-box}
+:root{--pink:#d99a94;--dark:#674d50;--muted:#9b7d80;--line:#ead6d3;--bg:#fff9f8;--soft:#f7e7e5}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--dark);font-family:Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+.checkout-top{height:92px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);background:#fff7f6}
+.brand{text-decoration:none;color:#b97772;display:grid;gap:2px}
+.brand span{font:italic 34px Georgia,serif}.brand b{font-size:11px;letter-spacing:5px}
+.back-shop{text-decoration:none;color:#9e7478;font-size:11px;font-weight:700}
+.checkout-shell{width:min(1240px,92vw);margin:48px auto 80px;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:42px}
+.checkout-main{min-width:0}.eyebrow{font-size:10px;letter-spacing:2.5px;color:#c6817b;font-weight:700}
+h1{font:400 48px Georgia,serif;margin:8px 0 28px}.progress{display:flex;align-items:center;margin-bottom:32px}
+.progress button{border:0;background:none;color:#b49a9c;font-size:11px;font-weight:700;display:flex;align-items:center;gap:8px;padding:0}
+.progress button span{width:27px;height:27px;border:1px solid #dcb9b5;border-radius:50%;display:grid;place-items:center}
+.progress button.active{color:#b96f69}.progress button.active span{background:var(--pink);border-color:var(--pink);color:#fff}
+.progress i{height:1px;background:var(--line);flex:1;margin:0 12px}
+.checkout-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:0 12px 35px rgba(90,60,64,.05)}
+.step{display:none}.step.active{display:block}.step h2{font:400 29px Georgia,serif;margin:0 0 7px}.lead{color:var(--muted);font-size:13px;margin:0 0 22px;line-height:1.5}
+.delivery-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.delivery-card{display:flex!important;gap:12px!important;align-items:flex-start!important;padding:17px!important;border:1px solid var(--line)!important;border-radius:12px!important;cursor:pointer;background:#fff}
+.delivery-card.active{border-color:var(--pink)!important;background:#fff5f4}
+.delivery-card input{width:auto!important;margin:3px 0 0!important}.delivery-card div{display:grid;gap:5px}.delivery-card span{font-size:11px;color:var(--muted);line-height:1.4}
+label{display:block;font-size:12px;font-weight:700;margin-bottom:14px}
+input,select,textarea{width:100%;margin-top:7px;border:1px solid #e1c8c5;border-radius:9px;padding:13px 14px;background:#fff;color:var(--dark);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(217,154,148,.12)}
+textarea{resize:vertical}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gift,.terms{display:flex;align-items:center;gap:9px;margin:18px 0}.gift input,.terms input{width:auto;margin:0}.gift span,.terms span{font-weight:600}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:22px}.actions.right{justify-content:flex-end}
+.primary,.secondary{border-radius:9px;padding:14px 21px;font-size:11px;font-weight:800;cursor:pointer}
+.primary{border:0;background:var(--pink);color:#fff}.secondary{border:1px solid #dcc0bd;background:#fff;color:#76585b}
+.summary-side{position:relative}.summary-card{position:sticky;top:28px;background:#151615;color:#f8eeee;border-radius:18px;padding:28px}
+.summary-card .mini{font-size:9px;letter-spacing:2px;color:#cf8d86}.summary-card h2{font:400 31px Georgia,serif;margin:8px 0 22px}
+.side-item{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid #383634}.side-item b{font-size:13px}.side-item small{display:block;color:#9e9996;margin-top:4px}
+.side-total{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:17px}.side-total strong{font-size:21px;color:#e0a19a}
+.secure-note{border-top:1px solid #383634;padding-top:18px;display:grid;gap:6px}.secure-note b{font-size:12px}.secure-note span{font-size:10px;line-height:1.5;color:#999}
+.final-summary{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:17px}.final-row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #f2e3e1;font-size:12px}.final-row:last-child{border-bottom:0}.final-row b{text-align:right}
+.final-total{display:flex;justify-content:space-between;font-size:19px;padding-top:15px}.payment-box{background:var(--soft);border-radius:12px;padding:17px}.payment-box>span{font-size:9px;letter-spacing:2px;color:#bc746f;font-weight:800}.payment-methods{display:flex;gap:8px;margin:12px 0}.payment{margin:0;padding:10px 13px;border:1px solid #e0c3c0;background:#fff;border-radius:8px;display:flex;align-items:center;gap:6px;cursor:pointer}.payment.active{border-color:var(--pink)}.payment input{width:auto;margin:0}.payment b{font-size:11px}.payment-box small{color:#9a7c7e;font-size:10px}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:#2c2526;color:#fff;padding:11px 16px;border-radius:8px;opacity:0;pointer-events:none;transition:.2s;font-size:12px}.toast.show{opacity:1;transform:translate(-50%,0)}
+.success-modal{position:fixed;inset:0;background:rgba(40,29,31,.72);display:none;place-items:center;padding:20px}.success-modal.open{display:grid}.success-modal>div{width:min(520px,100%);background:#fff9f8;border-radius:18px;padding:38px;text-align:center}.success-modal span{font-size:9px;letter-spacing:2px;color:#bf7973}.success-modal h2{font:400 34px Georgia,serif}.success-modal p{color:#907477;line-height:1.6}.success-modal a{display:inline-block;margin-top:10px;background:var(--pink);color:#fff;text-decoration:none;padding:13px 18px;border-radius:8px;font-size:11px;font-weight:800}
+.empty-checkout{background:#fff;border:1px solid var(--line);border-radius:18px;padding:40px}.empty-checkout h2{font:400 32px Georgia,serif}.empty-checkout a{display:inline-block;margin-top:12px;text-decoration:none;background:var(--pink);color:#fff;padding:13px 18px;border-radius:8px;font-size:11px;font-weight:800}.hidden{display:none!important}
+@media(max-width:900px){.checkout-shell{grid-template-columns:1fr}.summary-side{order:-1}.summary-card{position:static}.checkout-top{height:78px}.checkout-shell{margin-top:25px}}
+@media(max-width:620px){.checkout-shell{width:min(94vw,100%)}.checkout-form{padding:22px 16px}.grid2,.delivery-grid{grid-template-columns:1fr}h1{font-size:38px}.checkout-top{padding:0 4vw}.brand span{font-size:28px}.progress button{font-size:9px}.progress i{margin:0 6px}.payment-methods{flex-wrap:wrap}.actions{align-items:stretch}.actions button{flex:1}}

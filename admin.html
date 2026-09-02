@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kaya Flowers — Panel administracyjny</title>
+<link rel="stylesheet" href="admin.css">
+<script src="products-default.js?v=16" defer></script>
+<script src="admin.js?v=16" defer></script>
+</head>
+<body>
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <img src="assets/kaya-logo-transparent.png" alt="Kaya Flowers">
+    <span class="mini">PANEL ADMINISTRACYJNY</span>
+    <h1>Zarządzanie ofertą</h1>
+    <p>Panel przeznaczony wyłącznie dla właściciela Kaya Flowers.</p>
+    <form id="loginForm">
+      <label>Login<input id="login" autocomplete="username" required></label>
+      <label>Hasło<input id="password" type="password" autocomplete="current-password" required></label>
+      <button>ZALOGUJ SIĘ</button>
+      <div id="loginError" class="error"></div>
+    </form>
+    <div class="demo-note"><b>DEMO:</b> login <code>kaya</code>, hasło <code>demo2026</code></div>
+  </div>
+</div>
+
+<div id="panelView" class="panel hidden">
+  <aside>
+    <img src="assets/kaya-logo-transparent.png" alt="Kaya Flowers">
+    <nav>
+      <button class="active">Produkty</button>
+      <a href="index.html" target="_blank">Podgląd strony ↗</a>
+    </nav>
+    <button id="logout" class="logout">Wyloguj</button>
+  </aside>
+  <main>
+    <header>
+      <div><span class="mini">KAYA FLOWERS</span><h1>Produkty</h1><p>Dodawaj, usuwaj i edytuj produkty widoczne na stronie.</p></div>
+      <button id="addProduct" class="primary">+ DODAJ PRODUKT</button>
+    </header>
+    <div class="toolbar">
+      <input id="search" placeholder="Szukaj produktu...">
+      <span id="productCount"></span>
+    </div>
+    <div id="productList" class="product-list"></div>
+  </main>
+</div>
+
+<div class="modal" id="editorModal">
+  <form class="editor" id="editorForm">
+    <button type="button" class="x" id="closeEditor">×</button>
+    <span class="mini">EDYCJA PRODUKTU</span>
+    <h2 id="editorTitle">Dodaj produkt</h2>
+    <input type="hidden" id="productId">
+    <div class="grid2">
+      <label>Nazwa produktu<input id="name" required></label>
+      <label>Cena (zł)<input id="price" type="number" min="0" step="1" required></label>
+    </div>
+    <label>Opis<textarea id="description" rows="3"></textarea></label>
+    <div class="grid2">
+      <label>Kategoria
+        <select id="category">
+          <option value="bukiety">Bukiety</option>
+          <option value="prezent">Prezentowe</option>
+          <option value="kompozycje">Kompozycje</option>
+        </select>
+      </label>
+      <label>Etykieta<input id="badge" placeholder="np. BESTSELLER"></label>
+<label>Status produktu
+<select id="available"><option value="true">Dostępny</option><option value="false">Wyprzedany</option></select>
+</label>
+    </div>
+    <label>Zdjęcie
+      <input id="imageFile" type="file" accept="image/*">
+      <small>Możesz wybrać nowe zdjęcie z telefonu lub komputera.</small>
+    </label>
+    <label>lub adres zdjęcia<input id="imageUrl" placeholder="https://..."></label>
+    <div class="preview"><img id="previewImg" alt=""></div>
+    <div class="admin-size-box">
+  <b>Warianty rozmiaru</b>
+  <div class="grid2"><label>Small<input id="sizeSmall" type="number"></label><label>Medium<input id="sizeMedium" type="number"></label></div>
+  <div class="grid2"><label>Large<input id="sizeLarge" type="number"></label><label>Grande<input id="sizeGrande" type="number"></label></div>
+</div>
+<button class="primary" type="submit">ZAPISZ ZMIANY</button>
+  </form>
+</div>
+
+<div id="toast" class="toast"></div>
+</body>
+</html>
